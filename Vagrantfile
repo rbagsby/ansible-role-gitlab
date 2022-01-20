@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
     ansible-galaxy collection install chocolatey.chocolatey
     ansible-galaxy collection install community.vmware
     cd /home/vagrant
-    git clone https://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@github.com/ansible-role-gitlab.git
+    git clone https://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@github.com/rbagsby/ansible-role-gitlab.git
     EOF
     ansible.vm.provision "shell", inline: $root_shell
     ansible.vm.provision "shell", inline: $user_shell, privileged: false

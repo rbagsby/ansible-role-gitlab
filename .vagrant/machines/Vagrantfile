@@ -32,7 +32,6 @@ Vagrant.configure("2") do |config|
     pip install omsdk --upgrade
     pip install isi_sdk_8_1_1
     pip install isi_sdk_9_0_0
-    echo "2.2.2.46  idrac.local idrac" >> /etc/hosts
     EOF
     $user_shell = <<-EOF
     ansible-galaxy collection install dellemc.os10
@@ -42,7 +41,7 @@ Vagrant.configure("2") do |config|
     ansible-galaxy collection install chocolatey.chocolatey
     ansible-galaxy collection install community.vmware
     cd /home/vagrant
-    git clone https://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@github.com/rbagsby/ansible-role-gitlab.git
+    git clone git@github.com:rbagsby/ansible-role-gitlab.git
     EOF
     ansible.vm.provision "shell", inline: $root_shell
     ansible.vm.provision "shell", inline: $user_shell, privileged: false
